@@ -31,3 +31,27 @@ window.addEventListener("resize", (e) => {
      }
 
   });
+  document.addEventListener("DOMContentLoaded", function(){
+    console.log("h");
+    openDialog();
+});
+
+function openDialog() {
+  var dialog = document.createElement("div");
+  dialog.className = "custom-dialog";
+  dialog.style.display="block";
+  // Create the dialog content
+  var content = document.createElement("div");
+  content.innerHTML = `
+      <h2 class="dialog-title text-color-main">OFFERTA</h2>
+      <p class="dialog-text"> <br>50% DI SCONTO </br>per i primi 100 che acquisteranno un libro </p>
+      <button class="cta-btn cta-btn--hero" onclick="closeDialog()">Close</button>
+  `;
+
+  // Append the content to the dialog container
+  dialog.appendChild(content);
+
+  // Append the dialog container to the body
+  document.body.appendChild(dialog);
+}
+

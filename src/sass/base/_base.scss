@@ -14,3 +14,77 @@ body {
   max-width: 1920px;
   margin: auto;
 }
+
+
+.custom-dialog::before{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 1;
+  z-index: 99;
+}
+.custom-dialog {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 0px 600px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+ 
+  .dialog-text{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    @include respond(tab-land) {
+      font-size: 1.4rem;
+    }
+    @include respond(tab-port) {
+      font-size: 1.3rem;
+
+    }
+    @include respond(phone) {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    @include respond(phone-xs) {
+      font-size: 1rem;
+    }
+  }
+  .dialog-title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    @include respond(tab-land) {
+      font-size: 2rem;
+    }
+    @include respond(tab-port) {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+    @include respond(phone) {
+      font-size: 1.6rem;
+      line-height: 1.5;
+    }
+    @include respond(phone-xs) {
+      font-size: 1rem;
+    }
+  }
+  button{
+    box-shadow: none;
+    padding:1rem 2rem 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: $white;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
